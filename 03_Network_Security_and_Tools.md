@@ -118,7 +118,7 @@ SOC Analysts use **correlation rules** like:
 index=firewall OR index=dns
 | stats count by src_ip, dest_ip, dest_port
 | where count > 100 AND dest_port in (22,23,3389)
-
+```
 
 ## 3.9 Important Network Metrics (For Analysis)
 
