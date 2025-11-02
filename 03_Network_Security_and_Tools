@@ -118,3 +118,72 @@ SOC Analysts use **correlation rules** like:
 index=firewall OR index=dns
 | stats count by src_ip, dest_ip, dest_port
 | where count > 100 AND dest_port in (22,23,3389)
+
+
+## 3.9 Important Network Metrics (For Analysis)
+
+
+| Metric          | Meaning                | Why It Matters                 |
+| --------------- | ---------------------- | ------------------------------ |
+| **Bandwidth**   | Max data transfer rate | Identify network congestion    |
+| **Latency**     | Delay between packets  | Detect performance issues      |
+| **Throughput**  | Actual transfer speed  | Monitor during DDoS attacks    |
+| **Jitter**      | Variation in latency   | Voice/video quality indicator  |
+| **Packet Loss** | Dropped packets        | Sign of interference or attack |
+
+
+
+
+## 🧪 3.10 Network Troubleshooting Commands
+
+# Identify IP and interfaces
+ipconfig /all             # Windows
+ifconfig / ip addr show   # Linux
+
+# Test connectivity
+ping google.com
+
+# Trace path
+tracert google.com        # Windows
+traceroute google.com     # Linux
+
+# List open ports
+netstat -ano              # Windows
+ss -tuln                  # Linux
+
+# Scan network
+nmap -sS 192.168.1.0/24
+
+# Capture packets
+tcpdump -i eth0 port 80 -w capture.pcap
+
+
+##🧩 3.11 Defense-in-Depth (SOC Strategy)
+
+1.Perimeter Security – Firewalls, IDS/IPS
+2.Network Segmentation – VLANs, subnets
+3.Access Control – NAC, authentication policies
+4.Endpoint Protection – EDR, antivirus
+5.Monitoring & Detection – SIEM, log correlation
+6.Incident Response – Contain, eradicate, recover
+
+##📘 3.12 Interview Preparation (SOC Analyst Focus)
+
+1.What’s the difference between IDS and IPS?
+2.Explain CIA Triad with examples.
+3.How does a firewall differ from a proxy?
+4.What is a packet capture, and why is it useful?
+5.How would you detect a port scan using SIEM logs?
+6.What’s the role of VLANs in security?
+7.What is SSL inspection, and why is it used?
+8.Explain how NAT provides basic security.
+
+
+##🧠 3.13 Quick Summary
+
+1.Network security ensures CIA (Confidentiality, Integrity, Availability).
+2.SOC Analysts monitor and correlate logs from multiple sources.
+3.Tools like Wireshark, Nmap, Suricata, and Zeek are your core analysis toolkit.
+4.SIEMs help detect patterns from raw network and endpoint logs.
+5.Continuous monitoring, patching, and awareness form the backbone of network defense.
+
